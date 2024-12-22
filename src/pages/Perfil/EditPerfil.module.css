@@ -1,0 +1,96 @@
+.imagemEditPerfilLogo{
+    position: absolute;
+    top: 70%;
+    left: 50%;
+    width: auto;
+    height: 170px;
+    z-index: -1;
+    transform: translate(-50%,-50%);
+}
+
+.spanEditPerfil{
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: 3rem;
+}
+
+.spanEditPerfil span{
+    display: flex;
+    gap: .5rem;
+    justify-content: center;
+    align-items: center;
+    color: var(--white);
+}
+
+.titleEditPerfil{
+    margin-top: 1.5rem;
+    text-align: center;
+}
+
+.divEditPerfil{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #e56f757a;
+    border-radius: 5px;
+    margin: 2rem auto;
+    max-width: 800px;
+    border: 2px solid #fff;
+}
+
+.divEditPerfil form{
+    margin: 2rem 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 1.6rem;
+}
+
+.divEditPerfil form label{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: .3rem;
+}
+
+.divEditPerfil form label input{
+    width: 300px;
+    text-align: center;
+    outline: 0;
+    padding: .3rem;
+    font-size: 1.01rem;
+    border-radius: 2px;
+    border: none;
+}
+
+.divEditPerfil form .buttonImagem{
+    background-color: #fff;
+    letter-spacing: 1px;
+    font-size: 1.01rem;
+    border: none;
+    padding: .5rem 3rem;
+    border-radius: 2px;
+    cursor: pointer;
+    transition: all .5s;
+}
+
+.divEditPerfil form .buttonEnviar{
+    background-color: #fff;
+    letter-spacing: 1px;
+    font-size: 1.01rem;
+    border: none;
+    padding: .5rem 3rem;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    border-radius: 2px;
+    cursor: pointer;
+    transition: all .5s;
+}
+
+.divEditPerfil form .buttonEnviar:hover{
+    background-color: #ffffffb8;
+    padding: .6rem 3.1rem;
+}

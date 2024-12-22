@@ -1,0 +1,19 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    list-style: none;
+    text-decoration: none;
+    user-select: none;
+}
+
+:root{
+    --white: #fff;
+    --black: #18191C;
+    --salmon: #E56F75;
+}
+
+body{
+    background-color: var(--black);
+    color: var(--white);
+}

@@ -1,0 +1,134 @@
+.divPrincipalPosts {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    background-color: #e56f757a;
+    border-radius: 5px;
+    margin: 0 auto;
+    max-width: 800px;
+    border: 2px solid #fff;
+}
+
+.divCaixaDeEnviarPost {
+    margin-top: 2.5rem;
+}
+
+.divCaixaDeEnviarPost form {
+    display: flex;
+    flex-direction: column;
+}
+
+.divCaixaDeEnviarPost form label {
+    text-align: center;
+    font-size: 1.5rem;
+    letter-spacing: 1px;
+    margin-bottom: 2rem;
+
+}
+
+.divCaixaDeEnviarPost form textarea {
+    border: none;
+    font-size: 1.1rem;
+    border-radius: 2px;
+    padding: .2rem;
+    resize: none;
+    width: 600px;
+    height: 140px;
+    outline: none;
+}
+
+.divTextArea {
+    position: relative;
+}
+
+.divTextArea button {
+    all: unset;
+    position: absolute;
+    right: 12px;
+    top: 76%;
+    color: #000;
+    font-size: 1.3rem;
+    cursor: pointer;
+}
+
+.divTodosOsPosts {
+    margin-top: 4rem;
+    margin-bottom: 5rem;
+}
+
+.titlePosts {
+    text-align: center;
+    margin-bottom: 1rem;
+}
+
+/* css dos posts */
+
+.divPost {
+    width: 400px;
+    /* Ajuste conforme necessário */
+    max-width: 400px;
+    /* Ajuste conforme necessário */
+    border: 1px solid #ccc;
+    background-color: #000;
+    padding: 10px;
+    margin-bottom: 10px;
+    box-sizing: border-box;
+}
+
+.divPostFrase {
+    text-align: center;
+}
+
+.fotoComPost {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    /* Espaçamento entre a foto e o texto */
+    margin-bottom: 10px;
+}
+
+.postsImg {
+    width: 50px;
+    /* Tamanho fixo para a imagem */
+    height: 50px;
+    /* Tamanho fixo para a imagem */
+    border-radius: 50%;
+    /* Faz a imagem ficar redonda */
+    object-fit: cover;
+    /* Garante que a imagem fique bem ajustada, sem deformação */
+    flex-shrink: 0;
+    /* Garante que a imagem não encolha */
+    border: 2px solid var(--white);
+}
+
+.divPost p {
+    margin: 0;
+    padding: 0;
+    word-wrap: break-word;
+    /* Quebra as palavras longas */
+    overflow-wrap: break-word;
+    /* Quebra as palavras longas */
+    width: 100%;
+    /* Garante que o parágrafo ocupe 100% do contêiner */
+}
+
+.divErrorPost {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 100%;
+    background-color: red;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 5vh;
+    opacity: 1;
+    transition: opacity 0.5s ease-in-out;
+    z-index: 1000;
+    /* Certifique-se de que o erro esteja acima de outros elementos */
+}
+
+.divErrorPost.hide {
+    opacity: 0;
+}

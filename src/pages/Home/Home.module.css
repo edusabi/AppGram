@@ -1,0 +1,40 @@
+.titlesHome{
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+    margin-top: 7rem;
+    flex-direction: column;
+}
+
+.imagemHome{
+    width: 300px;
+    position: absolute;
+    transform: translate(-50%,-50%);
+    top: 50%;
+    left: 50%;
+}
+
+.buttonsHome{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15rem;
+    margin-top: 50vh;
+}
+
+.buttonsHome button{
+    cursor: pointer;
+    width: 200px;
+    padding: .3rem .3rem;
+    letter-spacing: 1px;
+    border: none;
+    border-radius: 2px;
+    color: var(--white);
+    background-color: var(--salmon);
+    font-size: 1.01rem;
+    transition: 1s all;
+}
+
+.buttonsHome button:hover{
+    background-color: #e56f75b9;
+}

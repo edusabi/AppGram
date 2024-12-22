@@ -1,0 +1,142 @@
+.imagemPerfilLogo{
+    position: absolute;
+    top: 55%;
+    left: 50%;
+    width: auto;
+    height: 170px;
+    z-index: -1;
+    transform: translate(-50%,-50%);
+}
+
+.spanPerfil{
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: 3rem;
+}
+
+.spanPerfil span{
+    display: flex;
+    gap: .5rem;
+    justify-content: center;
+    align-items: center;
+    color: var(--white);
+}
+
+.divPerfil{
+    position: relative;
+    display: flex;
+    justify-content: center;
+
+    background-color: #e56f757a;
+    border-radius: 5px;
+    margin: 10rem auto;
+    max-width: 600px;
+    height: 60vh;
+    border: 2px solid #fff;
+}
+
+.iconEdit{
+    position: absolute;
+    top: 10px;
+    right: 2rem;
+    color: var(--white);
+    font-size: 1.4rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 35px;
+    height: 35px;
+    transition: all .2s;
+    border-radius: 50%;
+}
+
+.iconEdit:hover{
+    background-color: rgba(255, 255, 255, 0.449);
+    border-radius: 50%;
+    width: 35px;
+    height: 35px;
+}
+
+.divPerfilInfo{
+    justify-content: center;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    flex-direction: column;
+}
+
+.perfilImg {
+    width: 120px; /* Tamanho fixo para a imagem */
+    height: 120px; /* Tamanho fixo para a imagem */
+    border-radius: 50%; /* Faz a imagem ficar redonda */
+    object-fit: cover; /* Garante que a imagem fique bem ajustada, sem deformação */
+    border: 2px solid var(--salmon);
+}
+
+.divNomeApelido{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: .5rem;
+    padding: .5rem 0;
+}
+
+.divIconsPerfil{
+    display: flex;
+    gap: 2rem;
+}
+  
+/* Estilo base para todos os ícones */
+.iconBase {
+    display: inline-block;
+    font-size: 24px;
+    margin: 0 10px;
+    text-decoration: none;
+    transition: transform 0.3s, color 0.3s;
+  }
+  
+  /* Instagram */
+  .instagramIcon {
+    color: #E1306C; /* Instagram Pink */
+    font-size: 1.3rem;
+}
+
+.instagramIcon:hover {
+    color: #F77737; /* Instagram Hover Color */
+    transform: scale(1.2);
+}
+
+/* WhatsApp */
+.whatsappIcon {
+    color: #25D366; /* WhatsApp Green */
+    font-size: 1.3rem;
+}
+
+.whatsappIcon:hover {
+    color: #128C7E; /* WhatsApp Hover Color */
+    transform: scale(1.2);
+}
+
+/* TikTok */
+.tiktokIcon {
+    color: #69C9D0; /* TikTok Cyan */
+    font-size: 1.3rem;
+}
+
+.tiktokIcon:hover {
+    color: #EE1D52; /* TikTok Hover Color */
+    transform: scale(1.2);
+}
+
+/* LinkedIn */
+.linkedinIcon {
+    color: #0077B5; /* LinkedIn Blue */
+    font-size: 1.3rem;
+}
+
+.linkedinIcon:hover {
+    color: #005582; /* LinkedIn Hover Color */
+    transform: scale(1.2);
+}

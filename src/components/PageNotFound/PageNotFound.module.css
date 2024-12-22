@@ -1,0 +1,26 @@
+.spanPageNotfound{
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: 3rem;
+}
+
+.spanPageNotfound span{
+    display: flex;
+    gap: .5rem;
+    justify-content: center;
+    align-items: center;
+    color: var(--white);
+}
+
+.notFoundImg{
+    width: 400px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}
+.h2NotFound{
+    text-align: center;
+    margin-top: 4rem;
+}

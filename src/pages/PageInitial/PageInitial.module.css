@@ -1,0 +1,226 @@
+.imagemPageInitial{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: auto;
+    height: 170px;
+    z-index: -1;
+    transform: translate(-50%,-50%);
+}
+
+.logo{
+    font-size: 1.2rem;
+    letter-spacing: 2px;
+}
+
+.navbar{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 4rem;
+    height: 15vh;
+}
+
+.perfil{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+}
+
+.perfilIconLogout{
+    cursor: pointer;
+    font-size: 1.4rem;
+}
+
+.perfilIconMessage{
+    font-size: 1.8rem;
+    cursor: pointer;
+}
+
+.perfilIconLupa{
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+.iconMenu{
+    position: fixed;
+    top: 90%;
+    font-size: 1.5rem;
+    cursor: pointer;
+    right: 3rem;
+}
+
+/* Ícone de fechar (X) */
+.closeIcon {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    font-size: 30px;
+    color: #fff;
+    cursor: pointer;
+}
+
+.closeIconPesquisa{
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    font-size: 30px;
+    color: #fff;
+    cursor: pointer;
+}
+
+/* Sidebar inicial escondida */
+.sidebar {
+    position: fixed;
+    top: 0;
+    right: -400px; /* Fora da tela */
+    width: 400px;
+    height: 100%;
+    background-color: #333;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: start;
+    padding: 20px;
+    border-left: 2px solid var(--salmon);
+    transition: right 0.3s ease; /* Animação suave */
+    z-index: 1000;
+}
+
+/* Sidebar visível */
+.sidebarOpen {
+    right: 0; /* Move para dentro da tela */
+}
+
+/* Botão do menu */
+.menuIcon {
+    cursor: pointer;
+    font-size: 24px;
+    color: #fff;
+    margin-left: 20px;
+}
+
+.imgPesquisa{
+    width: 50px; /* Tamanho fixo para a imagem */
+    height: 50px; /* Tamanho fixo para a imagem */
+    border-radius: 50%; /* Faz a imagem ficar redonda */
+    object-fit: cover; /* Garante que a imagem fique bem ajustada, sem deformação */
+    border: 2px solid var(--salmon);
+}
+
+.pesquisaBoxName{
+    padding: 15px 0;
+    border-bottom: 2px solid var(--salmon);
+    display: flex;
+    align-items: center;
+    gap: 3rem;
+    transition: .3s all;
+}
+
+.searchResults{
+    border: 2px solid var(--salmon);
+    position: relative;
+    background-color: #000;
+    padding: 3.5rem;
+}
+
+.pesquisaBoxName:hover{ 
+    background-color: rgba(255, 255, 255, 0.345);
+    border-radius: 2px;
+    cursor: pointer;
+}
+
+.nomePesquisa{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.perfilImg {
+    width: 70px; /* Tamanho fixo para a imagem */
+    height: 70px; /* Tamanho fixo para a imagem */
+    border-radius: 50%; /* Faz a imagem ficar redonda */
+    object-fit: cover; /* Garante que a imagem fique bem ajustada, sem deformação */
+    border: 2px solid var(--salmon);
+}
+
+.perfilImgSidebar{
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid var(--salmon);
+}
+
+.divIconsPageInitial{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5rem;
+}
+
+.divIconsPageInitial a{
+    color: var(--white);
+}
+
+.divPagesSidebar{
+    margin: 2rem 0;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+
+}
+
+.divPagesSidebar a{
+    color: var(--white);
+    font-size: 1.2rem;
+}
+
+.divIntoDados{
+    margin: 4.5rem 0;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.searchContainer {
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+
+.perfilIconLupa {
+    cursor: pointer;
+    font-size: 24px;
+}
+
+.searchInput {
+    width: 0; /* Começa invisível */
+    padding: 0;
+    opacity: 0; /* Invisível inicialmente */
+    transition: width 0.3s ease, opacity 0.3s ease, padding 0.3s ease; /* Transições suaves */
+    border: none;
+    outline: none;
+    background-color: transparent;
+    position: absolute;
+    left: 50px; /* Alinhado ao ícone */
+    font-size: 16px;
+    border-bottom: 1px solid transparent;
+    color: #000; /* Cor do texto */
+}
+
+.searchInputOpen {
+    width: 200px; /* Expande para 200px */
+    opacity: 1; /* Torna visível */
+    padding: 5px;
+    border-bottom: 1px solid #ccc; /* Adiciona borda ao expandir */
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.divIconsSidebar{
+    margin-top: 2rem;
+}

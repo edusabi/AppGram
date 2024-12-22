@@ -1,0 +1,115 @@
+.spanPerfilOutros{
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: 3rem;
+}
+
+.spanPerfilOutros span{
+    display: flex;
+    gap: .5rem;
+    justify-content: center;
+    align-items: center;
+    color: var(--white);
+}
+
+.divPerfilOutros{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    margin-top: 5rem;
+}
+
+.iconEdit{
+    position: absolute;
+    right: 15rem;
+    color: var(--white);
+    font-size: 1.4rem;
+    cursor: pointer;
+}
+
+.divPerfilInfo{
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    flex-direction: column;
+}
+
+.perfilOutrosImg {
+    width: 130px; /* Tamanho fixo para a imagem */
+    height: 130px; /* Tamanho fixo para a imagem */
+    border-radius: 50%; /* Faz a imagem ficar redonda */
+    object-fit: cover; /* Garante que a imagem fique bem ajustada, sem deformação */
+    border: 2px solid var(--salmon);
+}
+
+.divNomeApelido{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: .5rem;
+    padding: .5rem 0;
+}
+
+.divIconsPerfil{
+    display: flex;
+    gap: 3rem;
+}
+  
+.iconMessagePerfilOutros{
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+/* Estilo base para todos os ícones */
+.iconBase {
+    display: inline-block;
+    font-size: 24px;
+    margin: 0 10px;
+    text-decoration: none;
+    transition: transform 0.3s, color 0.3s;
+  }
+  
+  /* Instagram */
+  .instagramIcon {
+    color: #E1306C; /* Instagram Pink */
+    font-size: 1.3rem;
+}
+
+.instagramIcon:hover {
+    color: #F77737; /* Instagram Hover Color */
+    transform: scale(1.2);
+}
+
+/* WhatsApp */
+.whatsappIcon {
+    color: #25D366; /* WhatsApp Green */
+    font-size: 1.3rem;
+}
+
+.whatsappIcon:hover {
+    color: #128C7E; /* WhatsApp Hover Color */
+    transform: scale(1.2);
+}
+
+/* TikTok */
+.tiktokIcon {
+    color: #69C9D0; /* TikTok Cyan */
+    font-size: 1.3rem;
+}
+
+.tiktokIcon:hover {
+    color: #EE1D52; /* TikTok Hover Color */
+    transform: scale(1.2);
+}
+
+/* LinkedIn */
+.linkedinIcon {
+    color: #0077B5; /* LinkedIn Blue */
+    font-size: 1.3rem;
+}
+
+.linkedinIcon:hover {
+    color: #005582; /* LinkedIn Hover Color */
+    transform: scale(1.2);
+}
