@@ -36,7 +36,7 @@ const EnviarReceberPosts = () => {
         resizedFoto = await compressImage(base64ToFile(foto)); // Redimensiona e comprime a imagem
       }
 
-      const response = await axios.post("http://localhost:3000/posts/enviarPosts", {
+      const response = await axios.post("https://appgram.discloud.app/posts/enviarPosts", {
         post,
         apelido,
         foto: resizedFoto,
@@ -87,7 +87,7 @@ const EnviarReceberPosts = () => {
 
   const fetchUserData = async () => {
     try {
-      const response = await axios.get("http://localhost:3000/user", {
+      const response = await axios.get("https://appgram.discloud.app/user", {
         withCredentials: true,
       });
       const data = response.data;
@@ -105,7 +105,7 @@ const EnviarReceberPosts = () => {
   ///pegar todos os posts
   const fetchGetPosts = async () => {
     try {
-      const response = await axios.get("http://localhost:3000/posts/getPosts");
+      const response = await axios.get("https://appgram.discloud.app/posts/getPosts");
       const data = response.data;
       setGetPosts(data);
     } catch (error) {

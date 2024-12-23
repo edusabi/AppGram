@@ -9,7 +9,7 @@ const RotaProtegida = ({ children }) => {
         const verificarAutenticacao = async () => {
             try {
                 // Envia uma requisição para o backend para verificar o token
-                await axios.get("http://localhost:3000/verificarAutenticacao", { withCredentials: true });
+                await axios.get("https://appgram.discloud.app/verificarAutenticacao", { withCredentials: true });
                 setIsAuthenticated(true); // Se o token for válido
             } catch (error) {
                 setIsAuthenticated(false); // Se ocorrer erro, o token é inválido ou expirou
