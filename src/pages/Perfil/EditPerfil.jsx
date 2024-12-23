@@ -56,7 +56,7 @@ const EditPerfil = () => {
     }
 
     try {
-      const response = await axios.post("http://localhost:3000/dadosUser/editPerfil", formData, {
+      const response = await axios.post("https://appgram.discloud.app/dadosUser/editPerfil", formData, {
         headers: {
           "Content-Type": "multipart/form-data", // Importante para enviar arquivos
         },
@@ -75,7 +75,7 @@ const EditPerfil = () => {
   // Função para pegar os dados do usuário atual
   const fetchUserData = async () => {
     try {
-      const response = await axios.get("http://localhost:3000/user", {
+      const response = await axios.get("https://appgram.discloud.app/user", {
         withCredentials: true, // Inclui os cookies nesta requisição
       });
       const data = response.data;

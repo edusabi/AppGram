@@ -13,7 +13,7 @@ const MensagensEnviadas = () => {
 
   useEffect(() => {
     // Fazer a requisição para obter as mensagens recebidas e as informações dos remetentes
-    axios.get('http://localhost:3000/mensagens/mensagens/recebidas', { withCredentials: true })
+    axios.get('https://appgram.discloud.app/mensagens/mensagens/recebidas', { withCredentials: true })
       .then((response) => {
         setMensagens(response.data.mensagens);
       })

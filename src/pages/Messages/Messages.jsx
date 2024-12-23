@@ -4,7 +4,7 @@ import io from 'socket.io-client';
 import axios from 'axios';
 import styles from './Messages.module.css';
 
-const socket = io('http://localhost:3000', {
+const socket = io('https://appgram.discloud.app/', {
   withCredentials: true,
   extraHeaders: {
     "my-custom-header": "abcd"
@@ -21,13 +21,13 @@ const Messages = () => {
   const inputRef = useRef(null);
 
   useEffect(() => {
-    axios.get('http://localhost:3000/user', { withCredentials: true })
+    axios.get('https://appgram.discloud.app/user', { withCredentials: true })
       .then((response) => {
         setUserId(response.data.id);
         socket.emit('entrarSalaPrivada', response.data.id);
 
         // Requisição para buscar mensagens existentes entre dois usuários
-        return axios.get(`http://localhost:3000/mensagens/mensagens/${response.data.id}/${receiverId}`, { withCredentials: true });
+        return axios.get(`https://appgram.discloud.app/mensagens/mensagens/${response.data.id}/${receiverId}`, { withCredentials: true });
       })
       .then((response) => {
         setMessages(response.data);
@@ -56,7 +56,7 @@ const Messages = () => {
       };
 
       // Envia a mensagem para o backend
-      axios.post('http://localhost:3000/mensagens/enviarMensagem', messageData, { withCredentials: true })
+      axios.post('https://appgram.discloud.app/mensagens/enviarMensagem', messageData, { withCredentials: true })
         .then((response) => {
           setMessages((prevMessages) => [...prevMessages, response.data.messageData]);
           setTimeout(scrollToBottom, 100); // Rola para o final após enviar a mensagem

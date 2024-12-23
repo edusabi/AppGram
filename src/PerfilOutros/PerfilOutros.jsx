@@ -30,7 +30,7 @@ const PerfilOutros = () => {
   const fetchDadosBusca = async () => {
     try {
       const response = await axios.get(
-        `http://localhost:3000/dadosUser/buscarDadosOutrosPerfils/${id}`
+        `https://appgram.discloud.app/dadosUser/buscarDadosOutrosPerfils/${id}`
       );
   
       if (response.status === 200) {

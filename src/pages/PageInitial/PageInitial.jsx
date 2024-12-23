@@ -29,7 +29,7 @@ const PageInitial = () => {
 
   const fetchUserData = async () => {
     try {
-      const response = await axios.get("http://localhost:3000/user", {
+      const response = await axios.get("https://appgram.discloud.app/user", {
         withCredentials: true, // Inclui cookies na requisição
       });
       const data = response.data;
@@ -58,7 +58,7 @@ const PageInitial = () => {
   const fetchSearchResults = async (query) => {
     try {
       const response = await axios.get(
-        `http://localhost:3000/pesquisa?query=${query}`
+        `https://appgram.discloud.app/pesquisa?query=${query}`
       );
       setSearchResults(response.data); // Atualiza os resultados
     } catch (error) {
@@ -78,7 +78,7 @@ const PageInitial = () => {
   const logout = async () => {
     try {
       await axios.post(
-        "http://localhost:3000/logout",
+        "https://appgram.discloud.app/logout",
         {},
         { withCredentials: true }
       );
@@ -116,7 +116,7 @@ const PageInitial = () => {
   const [idPerfilPesquisa, setIdPerfilPesquisa] = useState("");
 
   const fetchGetPerfil = async()=>{
-    const response = await axios.get(`http://localhost:3000/dadosUser/verPerfil/:${idPerfilPesquisa}`);
+    const response = await axios.get(`https://appgram.discloud.app/dadosUser/verPerfil/:${idPerfilPesquisa}`);
     if(response.status == 200){
       navigate(`/perfilOutros/:${response.data._id}`)
     };

@@ -35,7 +35,7 @@ const Registro = () => {
             setConfirmarSenha("");
         }else{
             try {
-                const response = await axios.post("http://localhost:3000/registro", NewUser);
+                const response = await axios.post("https://appgram.discloud.app/registro", NewUser);
                 const data = response.status;
                 if(data == 200){
                     console.log("Deu certo, conta criada com sucesso!");

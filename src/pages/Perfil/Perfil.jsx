@@ -30,7 +30,7 @@ const Perfil = () => {
 
   const fetchUserData = async () => {
     try {
-      const response = await axios.get("http://localhost:3000/user", {
+      const response = await axios.get("https://appgram.discloud.app/user", {
         withCredentials: true, 
       });
       const data = response.data;
