@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { Navigate } from "react-router-dom";
 import axios from "axios";
+import PropTypes from "prop-types"; // Importa o PropTypes
 
 const RotaProtegida = ({ children }) => {
     const [isAuthenticated, setIsAuthenticated] = useState(null);
@@ -13,7 +14,6 @@ const RotaProtegida = ({ children }) => {
                 setIsAuthenticated(true); // Se o token for válido
             } catch (error) {
                 setIsAuthenticated(false); // Se ocorrer erro, o token é inválido ou expirou
-                console.log(error)
             }
         };
 
@@ -29,6 +29,11 @@ const RotaProtegida = ({ children }) => {
     }
 
     return <Navigate to="/login" replace />; // Se não estiver autenticado, redireciona para o login
+};
+
+// Adicionando a validação de 'children'
+RotaProtegida.propTypes = {
+    children: PropTypes.node.isRequired, // Garantir que 'children' seja passado e seja um nó React válido
 };
 
 export default RotaProtegida;
