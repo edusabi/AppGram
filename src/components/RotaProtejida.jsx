@@ -13,6 +13,7 @@ const RotaProtegida = ({ children }) => {
                 setIsAuthenticated(true); // Se o token for válido
             } catch (error) {
                 setIsAuthenticated(false); // Se ocorrer erro, o token é inválido ou expirou
+                console.log(error)
             }
         };
 
