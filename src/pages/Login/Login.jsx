@@ -20,7 +20,11 @@ const Login = () => {
       };
 
       // Fazendo a requisição para o backend
-      const response = await axios.post("https://appgram.discloud.app/login", User, { withCredentials: true });
+      const response = await axios.post(
+        "https://appgram.discloud.app/login",
+        User,
+        { withCredentials: true }
+      );
 
       const data = response.data;
       console.log(data);
@@ -46,7 +50,6 @@ const Login = () => {
       } else {
         // Erro de rede ou outro erro
         setMessage("Erro ao conectar ao servidor!");
-        console.log(error)
       }
     }
   };
