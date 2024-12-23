@@ -46,6 +46,7 @@ const Login = () => {
       } else {
         // Erro de rede ou outro erro
         setMessage("Erro ao conectar ao servidor!");
+        console.log(error)
       }
     }
   };
