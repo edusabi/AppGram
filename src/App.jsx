@@ -16,8 +16,8 @@ import MensagensEnviadas from './pages/MensagensEnviadas/MensagensEnviadas';
 //////components
 import RotaProtegida from "./components/RotaProtejida";
 import PageNotFound from './components/PageNotFound/PageNotFound';
-import DeviceDetector from './components/DeviceDetector';
-import NoMobileAccess from './components/NoMobileAccess';
+import DeviceDetector from './components/DeviceDetector/DeviceDetector';
+import NoMobileAccess from './components/DeviceDetector/NoMobileAccess';
 
 function App() {
 
