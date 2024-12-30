@@ -20,11 +20,7 @@ const Login = () => {
       };
 
       // Fazendo a requisição para o backend
-      const response = await axios.post(
-        "https://appgram.discloud.app/login",
-        User,
-        { withCredentials: true }
-      );
+      const response = await axios.post("https://appgram.discloud.app/login",User,{ withCredentials: true });
 
       const data = response.data;
       console.log(data);
