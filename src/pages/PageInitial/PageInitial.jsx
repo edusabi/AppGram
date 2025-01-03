@@ -1,4 +1,4 @@
-import { useEffect, useState, useRef } from "react";
+import { useEffect, useState, useRef, useCallback } from "react";
 import axios from "axios";
 import { NavLink, useNavigate } from "react-router-dom";
 
@@ -21,6 +21,7 @@ const PageInitial = () => {
   const [searchResults, setSearchResults] = useState([]); // Resultados da pesquisa
   const [isSidebarOpen, setIsSidebarOpen] = useState(false); // Controla a visibilidade da sidebar
   const [isResultsVisible, setIsResultsVisible] = useState(false); // Controla a visibilidade dos resultados de pesquisa
+  const [isLoading, setIsLoading] = useState(false); // Controla o estado de carregamento
 
   const navigate = useNavigate(); // Hook para navegação
 
@@ -56,6 +57,7 @@ const PageInitial = () => {
   };
 
   const fetchSearchResults = async (query) => {
+    setIsLoading(true); // Exibe o carregamento
     try {
       const response = await axios.get(
         `https://appgram.discloud.app/pesquisa?query=${query}`
@@ -63,6 +65,8 @@ const PageInitial = () => {
       setSearchResults(response.data); // Atualiza os resultados
     } catch (error) {
       console.error("Erro ao buscar:", error.response?.data || error.message);
+    } finally {
+      setIsLoading(false); // Remove o carregamento
     }
   };
 
@@ -82,13 +86,15 @@ const PageInitial = () => {
         {},
         { withCredentials: true }
       );
+      alert("Logout realizado com sucesso!"); // Alerta opcional
       navigate("/login"); // Redireciona para a página de login
     } catch (error) {
       console.error("Erro ao fazer logout:", error);
+      alert("Erro ao fazer logout. Tente novamente.");
     }
   };
 
-  const handleOutsideClick = (e) => {
+  const handleOutsideClick = useCallback((e) => {
     if (
       searchResultsRef.current &&
       !searchResultsRef.current.contains(e.target) &&
@@ -96,7 +102,7 @@ const PageInitial = () => {
     ) {
       closeSearchBox(); // Fecha a caixa de pesquisa e limpa o conteúdo ao clicar fora
     }
-  };
+  }, []);
 
   // Adiciona o evento de clique fora da área de pesquisa
   useEffect(() => {
@@ -104,27 +110,13 @@ const PageInitial = () => {
     return () => {
       document.removeEventListener("mousedown", handleOutsideClick);
     };
-  }, []);
+  }, [handleOutsideClick]);
 
   const closeSearchBox = () => {
     setIsSearchBoxOpen(false); // Fecha a caixa de pesquisa
     setSearchTerm(""); // Limpa o campo de pesquisa
     setIsResultsVisible(false); // Fecha os resultados
   };
-
-  ////ver perfil
-  const [idPerfilPesquisa, setIdPerfilPesquisa] = useState("");
-
-  const fetchGetPerfil = async()=>{
-    const response = await axios.get(`https://appgram.discloud.app/dadosUser/verPerfil/:${idPerfilPesquisa}`);
-    if(response.status == 200){
-      navigate(`/perfilOutros/:${response.data._id}`)
-    };
-  };
-
-  useEffect(()=>{
-    fetchGetPerfil();
-  }, [idPerfilPesquisa]);
 
   return (
     <div>
@@ -173,37 +165,45 @@ const PageInitial = () => {
       </nav>
 
       {/* Resultados da pesquisa */}
-      {isResultsVisible && searchResults.length > 0 && (
+      {isResultsVisible && (
         <div className={Style.searchResults} ref={searchResultsRef}>
           <IoClose className={Style.closeIcon} onClick={closeSearchBox} />
-          <ul>
-            {searchResults.map((result, index) => (
-              <div key={index} className={Style.pesquisaBoxName} onClick={()=>setIdPerfilPesquisa(result._id)}>
-                <img
-                  src={result.foto ? result.foto : "avatar.png"}
-                  alt="Foto do perfil"
-                  className={Style.imgPesquisa}
-                  width="auto"
-                  height="50px"
-                />
-                <h3 className={Style.nomePesquisa}>@ {result.nome}</h3>
-              </div>
-            ))}
-          </ul>
+          {isLoading ? (
+            <p>Buscando...</p>
+          ) : searchResults.length > 0 ? (
+            <ul>
+              {searchResults.map((result, index) => (
+                <div
+                  key={index}
+                  className={Style.pesquisaBoxName}
+                  onClick={() => navigate(`/perfilOutros/${result._id}`)}
+                >
+                  <img
+                    src={result.foto || "avatar.png"}
+                    alt="Foto do perfil"
+                    className={Style.imgPesquisa}
+                    width="auto"
+                    height="50px"
+                  />
+                  <h3 className={Style.nomePesquisa}>@ {result.nome || "Usuário Desconhecido"}</h3>
+                </div>
+              ))}
+            </ul>
+          ) : (
+            <p>Nenhum resultado encontrado.</p>
+          )}
         </div>
       )}
 
       {/* aqui para receber e enviar os posts */}
-      <EnviarReceberPosts/>
+      <EnviarReceberPosts />
 
       {/* Sidebar */}
       <div
         className={`${Style.sidebar} ${isSidebarOpen ? Style.sidebarOpen : ""}`}>
-
         <IoClose className={Style.closeIcon} onClick={toggleSidebar} />
 
         <div className={Style.divIntoDados}>
-
           <div>
             <img
               src={foto ? foto : "avatar.png"}
@@ -222,7 +222,6 @@ const PageInitial = () => {
           <div className={Style.divIconsSidebar}>
             <FiLogOut onClick={logout} className={Style.perfilIconLogout} />
           </div>
-
         </div>
       </div>
     </div>
