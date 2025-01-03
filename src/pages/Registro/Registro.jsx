@@ -37,7 +37,7 @@ const Registro = () => {
             try {
                 const response = await axios.post("https://appgram.discloud.app/registro", NewUser);
                 const data = response.status;
-                if(data == 200){
+                if(data == 201){
                     console.log("Deu certo, conta criada com sucesso!");
                     navigate("/login")
                 };
