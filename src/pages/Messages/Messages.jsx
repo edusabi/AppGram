@@ -86,7 +86,7 @@ const Messages = () => {
   return (
     <div className={styles.container}>
 
-      <NavLink to="/" className={styles.spanMessages}>
+      <NavLink to="/pageInitial" className={styles.spanMessages}>
             <span>
               <FaChevronLeft /> Voltar
           </span>
