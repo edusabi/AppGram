@@ -58,7 +58,8 @@ const PageInitial = () => {
   const fetchSearchResults = async (query) => {
     try {
       const response = await axios.get(
-        `https://appgram.discloud.app/pesquisa?query=${query}`
+        `https://appgram.discloud.app/pesquisa?query=${query}`,
+        {withCredentials:true}
       );
       setSearchResults(response.data); // Atualiza os resultados
     } catch (error) {
