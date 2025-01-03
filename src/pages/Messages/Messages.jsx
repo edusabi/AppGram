@@ -1,8 +1,10 @@
 import { useEffect, useState, useRef } from 'react';
-import { useParams } from 'react-router-dom';
+import { useParams, NavLink } from 'react-router-dom';
 import io from 'socket.io-client';
 import axios from 'axios';
 import styles from './Messages.module.css';
+
+import { FaChevronLeft } from "react-icons/fa";
 
 const socket = io('https://appgram.discloud.app/', {
   withCredentials: true,
@@ -83,6 +85,13 @@ const Messages = () => {
 
   return (
     <div className={styles.container}>
+
+      <NavLink to="/" className={styles.spanMessages}>
+            <span>
+              <FaChevronLeft /> Voltar
+          </span>
+      </NavLink>
+
       <div className={styles.messagesList}>
         {messages.map((msg, index) => (
           <div 

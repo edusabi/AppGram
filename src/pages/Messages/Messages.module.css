@@ -138,3 +138,18 @@
 .receivedMessage:hover {
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
+
+.spanMessages{
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding: 3rem;
+}
+
+.spanMessages span{
+  display: flex;
+  gap: .5rem;
+  justify-content: center;
+  align-items: center;
+  color: var(--white);
+}
